@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,11 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
  * 获取userAgent
  */
 - (NSString *)getUserAgent;
-
-/**
- * 跳转到app设置页面
- */
-+ (void)jumpAppSetting;
 
 /**
  * 请求相册权限
@@ -46,6 +42,33 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)saveVideo:(NSString *)video
          complete:(void(^)(BOOL result))complete;
+
+/**
+ * 跳转到app设置页面
+ */
++ (void)jumpAppSetting;
+
+/**
+ * 异步下载
+ */
++ (void)asyurlToData:(NSString *)imageUrl withHandler:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError)) handler;
+
+/**
+ * 生成二维码图
+ * tString:   内容
+ * tSize:     大小
+ * fillColor: 填充色
+ * iconImage: 中间小图标
+ */
++ (UIImage *)rxQRCodeForString:(NSString *)tString
+                          size:(CGSize)tSize
+                     fillColor:(UIColor *)tFillColor
+                     iconImage:(UIImage * _Nullable)tIconImage;
+
+/**
+ * view生成image
+ */
++ (UIImage *)makeImageWithView:(UIView *)view withSize:(CGSize)size;
 
 @end
 
