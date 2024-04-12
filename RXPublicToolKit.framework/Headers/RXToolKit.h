@@ -10,7 +10,39 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol RXWebViewDelegate <NSObject>
+
+/**
+ * 加载中
+ * @param urlStr 加载地址
+ * @param schemeParams 携带的参数
+ */
+- (void)rx_decidePolicyForNavigationAction:(NSString * _Nullable)urlStr schemeParams:(NSDictionary * _Nullable)schemeParams;
+
+/**
+ * 加载完成
+ * @param urlStr 加载地址
+ * @param schemeParams 携带的参数
+ */
+- (void)rx_didFinishNavigation:(NSString * _Nullable)urlStr schemeParams:(NSDictionary * _Nullable)schemeParams;
+
+/**
+ * 加载结果
+ * @note code = 200 时为加载成功不回调，失败时返回 code
+ * @param code 错误码
+ */
+- (void)rx_decidePolicyForNavigationResponse:(NSInteger)code;
+
+/**
+ * 关闭 webView
+ */
+- (void)rx_closeWebView;
+
+@end
+
 @interface RXToolKit : NSObject
+
+@property (nonatomic, weak) id <RXWebViewDelegate> webViewDelegate;
 
 /**
  * 获取SDK实例（单例）
@@ -20,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 获取userAgent
  */
-- (NSString *)getUserAgent;
+- (void)getUserAgent:(void(^)(id _Nullable result))complete;
 
 /**
  * 请求相册权限
@@ -69,6 +101,16 @@ NS_ASSUME_NONNULL_BEGIN
  * view生成image
  */
 + (UIImage *)makeImageWithView:(UIView *)view withSize:(CGSize)size;
+
+/**
+ * OpenWebView
+ */
+- (void)openWebView:(NSString *)url;
+
+/**
+ * CloseWebView
+ */
+- (void)closeWebView;
 
 @end
 
