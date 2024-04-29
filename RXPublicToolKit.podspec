@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXPublicToolKit'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'ruixue toolkit framework.'
 
 # This description is used to generate tags and improve searc results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/ruixueyun/RXPublicToolKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
    #s.source_files = '*.framework/Headers/*.{h,m,plist}'
       #s.source_files = '*.framework'

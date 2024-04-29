@@ -86,6 +86,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)asyurlToData:(NSString *)imageUrl withHandler:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError)) handler;
 
 /**
+ * 异步下载视频到本地文件夹中 eg. Document/video/abc.mp4
+ * @param videoUrl 视频url地址
+ * @param directoryName 存储在本地的文件夹名称，视频存储在此文件夹中，文件夹未存在则自动创建
+ *
+ */
++ (void)downloadVideo:(NSString *)videoUrl localDirectoryName:(NSString *)directoryName withHandler:(void (^)(NSURLResponse* response, NSString* filePath, NSString* fileName, NSError* connectionError)) handler;
+
+/**
  * 生成二维码图
  * tString:   内容
  * tSize:     大小
