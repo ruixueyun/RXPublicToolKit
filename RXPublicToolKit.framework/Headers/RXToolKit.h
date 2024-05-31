@@ -69,6 +69,18 @@ NS_ASSUME_NONNULL_BEGIN
          complete:(void(^)(BOOL result))complete;
 
 /**
+ * 保存图片到相册
+ * @note 可设置二维码
+ */
+- (void)saveImage:(id)img
+              url:(NSString *)url
+            width:(NSInteger)width
+           height:(NSInteger)height
+                x:(NSInteger)x
+                y:(NSInteger)y
+         complete:(void(^)(BOOL result))complete;
+
+/**
  * 保存视频到相册
  * @param video 图片url或本地路径
  */
@@ -119,6 +131,12 @@ NS_ASSUME_NONNULL_BEGIN
  * CloseWebView
  */
 - (void)closeWebView;
+
+/**
+ 返回当前视图控制器
+ */
++ (UIViewController *)currentViewController;
+
 
 @end
 

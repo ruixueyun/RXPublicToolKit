@@ -16,3 +16,4 @@ FOUNDATION_EXPORT const unsigned char RXPublicToolKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <RXPublicToolKit/PublicHeader.h>
 
 #import <RXPublicToolKit/RXToolKit.h>
+#import <RXPublicToolKit/RXPublicWebView.h>
