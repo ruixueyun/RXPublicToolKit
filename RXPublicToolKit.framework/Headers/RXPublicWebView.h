@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^ResultBlock)(NSString *resultUrl);
+typedef void(^WebViewComplete)(NSDictionary *response);
 
 @interface RXPublicWebView : UIViewController
 
@@ -23,6 +24,7 @@ typedef void(^ResultBlock)(NSString *resultUrl);
 @property (nonatomic, strong) RXPublicWebViewNaviBarView *naviBar;
 @property (nonatomic, strong) NSString *resultUrl;
 @property (nonatomic, copy) ResultBlock resultBlock;
+@property (nonatomic, copy) WebViewComplete complete;
 
 - (void)dismiss;
 

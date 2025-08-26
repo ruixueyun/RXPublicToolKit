@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
-    RXPublicWebviewTitleStyleLeft,
     RXPublicWebviewTitleStyleDefault,
+    RXPublicWebviewTitleStyleLeft,
 } RXPublicWebviewTitleStyle;
 
 typedef void(^BackBlock)(void);

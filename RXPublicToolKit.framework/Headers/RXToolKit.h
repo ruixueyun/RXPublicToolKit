@@ -137,6 +137,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIViewController *)currentViewController;
 
+/**
+ * NSDictionary to jsonString
+ */
++ (NSString *)toJsonString:(NSDictionary *)dic;
 
 @end
 
