@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXPublicToolKit'
-  s.version          = '4.1.2'
+  s.version          = '4.0.0.1000'
   s.summary          = 'ruixue toolkit framework.'
 
 # This description is used to generate tags and improve searc results.
@@ -33,12 +33,10 @@ TODO: Add long description of the pod here.
    #s.source_files = '*.framework/Headers/*.{h,m,plist}'
       #s.source_files = '*.framework'
   
-   s.vendored_frameworks = '*.framework'
+   s.vendored_frameworks = '*.xcframework'
   
   # s.resource_bundles = {
   #   'RXSDK' => ['RXSDK/Assets/*.png']
   # }
-  
-  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   
 end
