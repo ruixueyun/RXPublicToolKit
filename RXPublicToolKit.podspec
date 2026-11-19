@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXPublicToolKit'
-  s.version          = '4.1.2'
+  s.version          = '4.0.0.1001'
   s.summary          = 'ruixue toolkit framework.'
 
 # This description is used to generate tags and improve searc results.
